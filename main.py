@@ -62,18 +62,48 @@ def main():
 
     print(f"Consultando estrategia para: {sample_seller.name}")
     print(f"Perfil de Cluster: {sample_seller['cluster_label']}")
+    # ... (Dentro de main.py, en la FASE 3) ...
+
+    print_separator("🤖 FASE 3: ASESORÍA 100% GEN-AI (DYNAMIC)")
+
+    # 1. Obtenemos las estadísticas promedio del cluster al que pertenece el vendedor
+    # Esto es crucial para el "Paso 1" de la IA
+    target_cluster_id = 3 # Ejemplo: High Ticket
     
-    # Pasamos la key ingresada (o None) al Advisor
+    # Filtramos los vendedores de ese cluster
+    cluster_sellers = seller_profiles[seller_profiles['cluster_id'] == target_cluster_id]
+    
+    # Calculamos el "Centroide" (el vendedor promedio de este grupo)
+    cluster_stats = {
+        'price': cluster_sellers['price'].median(),
+        'stock': cluster_sellers['stock'].mean(),
+        'discount_pct': cluster_sellers['discount_pct'].mean(),
+        'seller_reputation': 4.5 # Asumimos o calculamos si es numérico
+    }
+
+    # Seleccionamos un vendedor específico para aconsejar
+    sample_seller = cluster_sellers.iloc[0]
+
+    print(f"Consultando para: {sample_seller.name}")
+    
+    # Instanciamos OBLIGATORIAMENTE con Key
+    if not api_key_input:
+        print(" DETENIDO: Este modo requiere API Key real.")
+        return
+
     advisor = GenAIAdvisor(api_key=api_key_input)
     
-    resultado = advisor.get_recommendation(
-        row=sample_seller,
-        cluster_id=sample_seller['cluster_id']
+    # Llamamos al nuevo método dinámico
+    resultado = advisor.get_recommendation_dynamic(
+        seller_row=sample_seller, 
+        cluster_stats_row=cluster_stats
     )
     
-    print(f"PROMPT CONTEXTUAL (Interno):\n{resultado['prompt_used'][:150]}... [truncado]")
+    print("\n" + "-"*40)
+    print(f" PERFIL DETECTADO POR IA: {resultado['perfil_ia'].upper()}")
+    print(f" ESTRATEGIA MACRO: {resultado['estrategia_macro']}")
     print("-" * 40)
-    print(f"RESPUESTA FINAL:\n{resultado['strategy']}")
+    print(f" CONSEJOS PERSONALIZADOS:\n{resultado['recomendacion_final']}")
     print("-" * 40)
 
 if __name__ == "__main__":
