@@ -2,7 +2,7 @@
 
 Este repositorio contiene una solución técnica para el análisis exploratorio de datos (EDA) de vendedores de Mercado Libre y una propuesta de sistema de recomendación basado en IA Generativa.
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 El objetivo es identificar patrones de comportamiento en vendedores de e-commerce y utilizar esos insights para generar recomendaciones personalizadas que maximicen sus ventas.
 
 ### Componentes Principales:
