@@ -9,10 +9,11 @@ El script procesa un dataset de publicaciones de Mercado Libre para:
 2. **Feature Engineering:** Creación de métricas clave como precios promedio, variabilidad y stock.
 3. **Análisis Exploratorio (EDA):** Distribución de precios, reputación y tipos de logística.
 4. **Clustering:** Segmentación de vendedores utilizando K-Means y PCA para reducir dimensionalidad.
+5. **Extension GenAI:** Implementamos un agente IA de Estrategia que busca ser un Recomendador Generativo de Estrategias Comerciales
 
 ## Estructura del repositorio
 
-- `AnalisisExploratorio.py`: Script principal con todo el flujo de procesamiento y modelado.
+- `AnalisisExploratorio.ipynb`: Script principal con todo el flujo de procesamiento y modelado.
 - `requirements.txt`: Lista de dependencias necesarias.
 - `README.md`: Documentación del proyecto.
 - `df_challenge_meli - df_challenge_meli.csv`: Dataset del caso práctico.
