@@ -1,28 +1,23 @@
-# Análisis de Vendedores y Asesoría con GenAI - Mercado Libre
+# Análisis de Vendedores en Mercado Libre
 
-Este repositorio contiene una solución técnica para el análisis exploratorio de datos (EDA) de vendedores de Mercado Libre y una propuesta de sistema de recomendación basado en IA Generativa.
+Este proyecto realiza un análisis exploratorio y una segmentación de vendedores de Mercado Libre utilizando técnicas de Machine Learning (Clustering). El objetivo es identificar patrones de comportamiento, estrategias de venta (volumen vs. margen) y perfiles logísticos.
 
-## Descripción del Proyecto
-El objetivo es identificar patrones de comportamiento en vendedores de e-commerce y utilizar esos insights para generar recomendaciones personalizadas que maximicen sus ventas.
+## Descripción del Caso
 
-### Componentes Principales:
-1.  **EDA Profundo:** Análisis estadístico (Mann-Whitney, Chi-Square) sobre reputación, precios y logística.
-2.  **Segmentación:** Clustering de vendedores para identificar perfiles (Amateurs vs. Profesionales).
-3.  **GenAI Advisor:** Módulo conceptual que utiliza LLMs para traducir métricas en consejos de negocio accionables.
+El script procesa un dataset de publicaciones de Mercado Libre para:
+1. **Limpieza de Datos:** Detección de outliers, manejo de nulos y estandarización.
+2. **Feature Engineering:** Creación de métricas clave como precios promedio, variabilidad y stock.
+3. **Análisis Exploratorio (EDA):** Distribución de precios, reputación y tipos de logística.
+4. **Clustering:** Segmentación de vendedores utilizando K-Means y PCA para reducir dimensionalidad.
 
-## Insights Clave
-* **Reputación y Precio:** Se validó estadísticamente que los vendedores `Green_Gold` pueden mantener precios significativamente más altos sin perder competitividad.
-* **Logística:** Existe una dependencia crítica entre el uso de logística *Fulfillment* y la alta reputación.
-* **Psicología de Precios:** El 60% de los top sellers utilizan *Charm Pricing* (precios terminados en .99 o .90).
+## Estructura del Repositorio
 
-## Tecnologías Utilizadas
-* **Python 3.10+**
-* **Pandas & NumPy:** Manipulación de datos.
-* **Seaborn & Matplotlib:** Visualización.
-* **SciPy:** Pruebas de hipótesis estadísticas.
-* **OpenAI API (Simulado):** Generación de texto para recomendaciones.
+- `analisis.py`: Script principal con todo el flujo de procesamiento y modelado.
+- `requirements.txt`: Lista de dependencias necesarias.
+- `README.md`: Documentación del proyecto.
+- `df_challenge_meli - df_challenge_meli.csv`: Dataset del caso práctico.
 
-## Cómo ejecutar este proyecto
+## Instalación y Uso
 
 1. Clonar el repositorio:
    ```bash
