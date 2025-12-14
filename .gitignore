@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches de notebooks y Pytest
+.ipynb_checkpoints
+.pytest_cache/
+
+# Entornos virtuales
+venv/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Archivos de logs y sistema
+*.log
+.DS_Store
+
+# Artefactos de ML (Modelos guardados que suelen ser grandes)
+*.pkl
+*.joblib
