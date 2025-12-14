@@ -12,7 +12,7 @@ El script procesa un dataset de publicaciones de Mercado Libre para:
 
 ## Estructura del Repositorio
 
-- `analisis.py`: Script principal con todo el flujo de procesamiento y modelado.
+- `AnalisisExploratorio.py`: Script principal con todo el flujo de procesamiento y modelado.
 - `requirements.txt`: Lista de dependencias necesarias.
 - `README.md`: Documentación del proyecto.
 - `df_challenge_meli - df_challenge_meli.csv`: Dataset del caso práctico.
